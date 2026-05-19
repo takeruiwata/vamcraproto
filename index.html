@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Vampire Crawlers Proto</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game">
+  <div id="hud">
+    <div class="stat" title="HP">❤️ <span id="hp">30</span>/<span id="hp-max">30</span></div>
+    <div class="stat" title="Mana per turn">💧 <span id="hud-mana">6/6</span></div>
+    <div class="stat" title="Level">⭐ Lv<span id="level">1</span></div>
+    <div class="stat" title="XP">XP <span id="xp">0</span>/<span id="xp-next">5</span></div>
+    <div class="stat" title="Floor">🏛️ F<span id="floor">1</span></div>
+    <div class="stat" title="Deck">🗃️ <span id="deck-size">0</span></div>
+    <div class="stat" title="進化ジェム">💎 <span id="gem-count">0</span></div>
+    <div class="stat" id="shovel-stat" title="Shovel: 持っていれば SPACE で掘り進める">🪏 <span id="shovel-status">なし</span></div>
+    <div class="stat" title="Traits">✨ <span id="trait-display">-</span></div>
+    <button id="bgm-toggle">♪ BGM OFF</button>
+  </div>
+
+  <div id="dungeon-wrap">
+    <canvas id="view-3d" width="720" height="420"></canvas>
+    <div id="minimap-wrap">
+      <div id="minimap-label">MAP</div>
+      <div id="minimap"></div>
+    </div>
+  </div>
+
+  <div id="hint">WASD = 移動 (前後左右) ✦ Q/E = 左右回転 ✦ 🪏 拾うと自動で次階層へ ✦ 敵接触で戦闘</div>
+</div>
+
+<!-- Battle overlay -->
+<div id="battle" class="overlay hidden">
+  <div class="enemy-formation">
+    <div class="enemy-row back-row" id="enemy-back-row"></div>
+    <div class="enemy-row middle-row" id="enemy-middle-row"></div>
+    <div class="enemy-row front-row" id="enemy-front-row"></div>
+  </div>
+
+  <!-- Player panel (HP + mana visible during battle) -->
+  <div class="player-panel">
+    <div class="player-stat">
+      <span class="label">❤️ HP</span>
+      <div class="bar hp-bar" id="battle-player-hp-bar"><div class="fill"></div></div>
+      <span id="battle-player-hp">30/30</span>
+    </div>
+    <div class="player-stat">
+      <span class="label">💧 Mana</span>
+      <div class="bar mana-bar" id="battle-player-mana-bar"><div class="fill"></div></div>
+      <span id="player-mana">6/6</span>
+    </div>
+  </div>
+
+  <div class="combo-meter">
+    Combo <span id="combo-mul">×1.00</span>
+    <span class="dim">last mana <span id="last-mana">-</span></span>
+    <span class="dim">block <span id="player-block">0</span></span>
+  </div>
+  <div id="battle-hand"></div>
+  <div id="discard-pile">
+    <div class="pile-label">捨て札</div>
+  </div>
+  <div class="battle-controls">
+    <button id="end-battle-turn">ターン終了 (Enter)</button>
+    <button id="flee">逃走 (-3HP)</button>
+  </div>
+  <div id="battle-log"></div>
+</div>
+
+<!-- Levelup overlay -->
+<div id="levelup" class="overlay hidden">
+  <h2>★ LEVEL UP ★</h2>
+  <p>カードを1枚選んでデッキに加える</p>
+  <div id="levelup-choices"></div>
+  <button id="skip-levelup">スキップ</button>
+</div>
+
+<!-- Title screen overlay -->
+<div id="title-screen" class="overlay">
+  <h1 id="title-logo">VAMPIRE<br>CRAWLERS<br><span class="sub">PROTO</span></h1>
+  <div class="title-buttons">
+    <button id="btn-start-game">🎮 ゲームスタート</button>
+    <button id="btn-test-mode">🧪 テストモード</button>
+  </div>
+  <p class="title-credits">Icons by <a href="https://game-icons.net" target="_blank">game-icons.net</a> (CC BY 3.0)</p>
+  <label class="debug-toggle">
+    <input type="checkbox" id="debug-mode">
+    🛠️ デバッグモード
+  </label>
+  <div id="debug-panel" class="hidden">
+    <h4>🛠️ デバッグブースト (通常プレイに適用)</h4>
+    <div class="debug-row">
+      <label>開始ステージ <input type="number" id="debug-stage" value="1" min="1" max="8"></label>
+      <label>開始階 <input type="number" id="debug-floor" value="1" min="1" max="5"></label>
+      <label>開始ループ+N <input type="number" id="debug-cycle" value="0" min="0" max="99"></label>
+      <label>HP <input type="number" id="debug-hp" value="60" min="1" max="9999"></label>
+      <label>マナ/T <input type="number" id="debug-mana" value="8" min="1" max="99"></label>
+      <label>カード倍率 <input type="number" id="debug-card-mul" value="2.0" min="0.1" max="100" step="0.1"></label>
+      <label>💎ジェム <input type="number" id="debug-gems" value="5" min="0" max="99"></label>
+      <label class="cb"><input type="checkbox" id="debug-all-traits"> 全特性</label>
+    </div>
+    <p class="dim-text">設定は localStorage に保存。デバッグOFFにすると無効</p>
+  </div>
+</div>
+
+<!-- Test mode setup overlay -->
+<div id="test-mode" class="overlay hidden">
+  <h2>🧪 テストモード設定</h2>
+  <div class="test-cols">
+    <div class="test-section">
+      <h3>プレイヤー</h3>
+      <label>開始フロア <input type="number" id="test-floor" value="1" min="1" max="99"></label>
+      <label>開始Lv <input type="number" id="test-level" value="1" min="1" max="99"></label>
+      <label>開始HP <input type="number" id="test-hp" value="40" min="10" max="9999"></label>
+      <label>マナ/ターン <input type="number" id="test-mana" value="10" min="3" max="99"></label>
+      <label>カードダメ倍率 <input type="number" id="test-card-mul" value="1.0" min="0.1" max="100" step="0.1"></label>
+      <label>開始ブロック <input type="number" id="test-start-block" value="0" min="0" max="999"></label>
+      <label>💎ジェム <input type="number" id="test-gems" value="5" min="0" max="99"></label>
+      <label>手札サイズ <input type="number" id="test-hand-size" value="5" min="1" max="20"></label>
+      <label><input type="checkbox" id="test-all-traits" checked> 全特性有効</label>
+    </div>
+    <div class="test-section">
+      <h3>敵</h3>
+      <label>HP倍率 <input type="number" id="test-enemy-hp-mul" value="1.0" min="0.1" max="20" step="0.1"></label>
+      <label>ATK倍率 <input type="number" id="test-enemy-dmg-mul" value="1.0" min="0.1" max="20" step="0.1"></label>
+      <label>編成列数 <input type="number" id="test-rows" value="3" min="1" max="10"></label>
+      <p class="dim-text">×0.5=弱体化 / 列数=1で1列だけ</p>
+    </div>
+  </div>
+
+  <div class="test-section deck-section">
+    <h3>出現させる敵 <span class="dim-text">(未選択=フロア相応で自動)</span></h3>
+    <div id="test-enemy-pool" class="chip-grid"></div>
+  </div>
+
+  <div class="test-section deck-section">
+    <h3>出現させるボス <span class="dim-text">(5階毎/未選択=デフォルト)</span></h3>
+    <div id="test-boss-pool" class="chip-grid"></div>
+  </div>
+
+  <div class="test-section deck-section">
+    <h3>カスタムデッキ <label class="inline"><input type="checkbox" id="test-custom-deck"> 使う</label></h3>
+    <div id="test-deck-builder" class="hidden">
+      <div class="deck-controls">
+        <span>合計: <span id="test-deck-count">0</span> 枚</span>
+        <button id="test-deck-clear">クリア</button>
+        <span class="dim-text">クリック=追加 / 右クリック=1枚削除</span>
+      </div>
+      <div id="test-card-picker"></div>
+    </div>
+  </div>
+
+  <div class="test-section deck-section battle-only-section">
+    <h3>🥊 戦闘だけテスト <span class="dim-text">(探索スキップ、1体直接対戦)</span></h3>
+    <div class="battle-only-row">
+      <label>対戦相手 <select id="test-battle-enemy"></select></label>
+      <button id="test-battle-start">戦闘開始</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <button id="test-start">🧪 通常テスト開始 (ダンジョン)</button>
+    <button id="test-back">← 戻る</button>
+  </div>
+</div>
+
+<!-- Stage select overlay -->
+<div id="stageselect" class="overlay hidden">
+  <h2>🗺️ ステージ選択</h2>
+  <p class="dim-text">クリア済みステージ以降は ✦ で開放</p>
+  <div id="stage-choices"></div>
+  <div class="row">
+    <button id="stage-back">← 戻る</button>
+  </div>
+</div>
+
+<!-- Trait select overlay -->
+<div id="charselect" class="overlay hidden">
+  <h2>✨ 特性を 2つ 選択 ✨</h2>
+  <p class="dim-text">2つの特性を組み合わせて自分だけのキャラを作る (<span id="trait-counter">0 / 2</span>)</p>
+  <div id="trait-choices"></div>
+  <div class="row">
+    <button id="trait-back">← 戻る</button>
+    <button id="trait-start" disabled>ゲーム開始</button>
+  </div>
+</div>
+
+<!-- Evolve prompt overlay -->
+<div id="evolve-prompt" class="overlay hidden">
+  <h2>✨ 進化可能! ✨</h2>
+  <p class="dim-text">2枚のカードを合体して強化版にする</p>
+  <div id="evolve-display"></div>
+  <div class="row">
+    <button id="evolve-confirm">合体する</button>
+    <button id="evolve-skip">スキップ</button>
+  </div>
+</div>
+
+<!-- Gameover overlay -->
+<div id="gameover" class="overlay hidden">
+  <h1>💀 GAME OVER 💀</h1>
+  <p>Floor <span id="go-floor">1</span> / Lv <span id="go-level">1</span> で力尽きた</p>
+  <button id="restart">もう一度</button>
+</div>
+
+<!-- Card tooltip (shown on hover for any card) -->
+<div id="card-tooltip" class="hidden">
+  <div class="tt-header">
+    <span class="tt-mana"></span>
+    <span class="tt-name"></span>
+  </div>
+  <div class="tt-type"></div>
+  <div class="tt-desc"></div>
+  <div class="tt-extra"></div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

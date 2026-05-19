@@ -1,0 +1,177 @@
+================================================================
+Vampire Crawlers Proto — Asset Generation Prompts (51 images)
+================================================================
+Format: 1行目 = ファイル名 / 2行目 = プロンプト / 空行で区切り
+配置先: D:\雑インストール\vampire-crawlers-proto\assets\
+タイル系 (floor, wall) と背景系 (bg_*) は不透明でOK、それ以外は透明背景PNG。
+================================================================
+
+[1] プレイヤー & アイテム
+
+player.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Young mage hero in purple robe holding a glowing staff, facing forward.
+
+shovel.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Ornate magical shovel with glowing golden handle.
+
+chest.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Wooden treasure chest with gold trim, slightly ajar with sparkles, used as Mimic disguise.
+
+
+[2] 通常モンスター 17種
+
+enemy_bat.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Small fanged vampire bat with red eyes, wings spread.
+
+enemy_skeleton.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Undead skeleton warrior holding a rusty sword.
+
+enemy_rat.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Mangy plague rat with glowing yellow eyes and a long pink tail.
+
+enemy_slime.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Bouncy green acidic slime with a cute face, drippy and glossy.
+
+enemy_mini_slime.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Tiny green mini slime, smaller cuter version of a slime, glossy drop shape.
+
+enemy_ghost.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Translucent blue ghost with hollow eyes and wisp-like tail.
+
+enemy_zombie.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Rotting green zombie with torn clothes and arms outstretched.
+
+enemy_vampire.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Aristocratic vampire in black cape with fangs and glowing red eyes.
+
+enemy_mimic.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Monstrous mimic with chest-shaped maw, jagged teeth and dripping tongue, wood splintering.
+
+enemy_spider.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Giant venomous spider, dark purple with glowing eyes and hairy legs.
+
+enemy_wraith.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Swirling dark wraith with glowing purple eyes and tattered ethereal robes.
+
+enemy_lich.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Undead lich sorcerer with crown, glowing green skull, dark robes and bony hands.
+
+enemy_berserker.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Hulking orc berserker with two axes, snarling with bulging muscles.
+
+enemy_demon.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Menacing horned red demon with claws, wreathed in orange flame.
+
+enemy_mirror.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Enchanted ornate floating mirror with creepy eyes inside the reflective glass.
+
+enemy_hellhound.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Three-headed hellhound with flaming mane, snarling fangs and glowing red eyes.
+
+enemy_beholder.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Floating sphere monster with one huge central eye and many smaller eyestalks.
+
+
+[3] ボス 5体 (大きく威圧感ある構図)
+
+boss_megabat.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Colossal demonic vampire bat boss with glowing red aura, massive wings spread wide, wearing golden crown.
+
+boss_necromancer.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Hooded necromancer boss with floating skulls and green soul flames orbiting around him.
+
+boss_dragon.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Ancient red dragon boss breathing fire, massive scales and horns, dramatic powerful pose.
+
+boss_archlich.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Arch-lich king boss with ornate golden crown, purple flame eyes, royal robes and skeletal hands holding a staff.
+
+boss_void_avatar.png
+16-bit pixel art sprite, vibrant saturated colors, dark fantasy with cartoon energy (Vampire Survivors / Crawlers aesthetic), centered subject, transparent background, no shadow, no text, 1024x1024. Cosmic void avatar boss, swirling black hole with stars and tentacles emerging from the darkness.
+
+
+[4] ダンジョンタイル (不透明、seamless tileable)
+
+floor.png
+16-bit pixel art texture, dark fantasy dungeon, no text, 1024x1024, seamless tileable. Dark stone dungeon floor tile with slight cracks and worn edges.
+
+wall.png
+16-bit pixel art texture, dark fantasy dungeon, no text, 1024x1024, seamless tileable. Mossy stone dungeon wall block, dark gray with green moss patches.
+
+
+[5] カードアイコン 18枚
+
+card_bone.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. White bone icon, simple and clean.
+
+card_knife.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Sharp dagger icon with silver blade and dark grip.
+
+card_slash.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Crossed swords icon, silver blades with gold hilts.
+
+card_guard.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Round shield icon with cross emblem, steel and blue.
+
+card_ironwave.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Metallic blue wave with a sword fused into it.
+
+card_garlic.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. White garlic bulb icon with green leaves.
+
+card_arrow.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Bow with notched arrow icon, wood and feathers.
+
+card_heal.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Red heart icon with golden halo and white sparkles.
+
+card_twin.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Two crossed silver daggers icon.
+
+card_cleave.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Massive battleaxe icon with a motion blur arc behind it.
+
+card_shrug.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Large tower shield icon with iron bands and rivets.
+
+card_bolt.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Jagged yellow lightning bolt icon with electric crackle.
+
+card_fire.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Orange-red flame icon with glowing embers.
+
+card_drain.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Red blood droplet icon with swirling life essence aura.
+
+card_bash.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Spiked warhammer icon, brutal and heavy looking.
+
+card_hellfire.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Massive crimson hellfire flame icon with skulls inside the flames.
+
+card_pentagram.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Glowing crimson pentagram star icon with dark energy aura.
+
+card_wild.png
+16-bit pixel art icon, vibrant saturated colors, dark fantasy with cartoon energy, centered, transparent background, no shadow, no text, 1024x1024. Purple swirling vortex icon with mystical energy.
+
+
+[6] オプション (あれば豪華)
+
+bg_dungeon.png
+16-bit pixel art background, dark fantasy gothic dungeon corridor with stone arches and atmospheric perspective, candlelit, no text, 1920x1080.
+
+bg_battle.png
+16-bit pixel art background, ominous candlelit boss arena with stone arches and blood splatters, no text, 1920x1080.
+
+logo.png
+Game title logo "VAMPIRE CRAWLERS PROTO" in bloody gothic letters with bats flying around, transparent background, no extra text, 1024x512.
+
+card_frame.png
+Ornate fantasy card border frame with gold filigree and dark purple accents, transparent center for icon overlay, vertical 5:7 ratio, no text, 1024x1024.
+
+levelup_banner.png
+"LEVEL UP" banner ribbon with golden glow and stars, transparent background, 1024x512.
+
+wild_overlay.png
+Glowing purple wild magic swirl overlay, mystical energy, transparent center, transparent background, 1024x1024.

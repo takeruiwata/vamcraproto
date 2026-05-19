@@ -1,0 +1,139 @@
+================================================================
+Vampire Crawlers Proto — フリー素材ソース集 (海外OK)
+================================================================
+すべて商用利用可、CC0 or CC-BY 3.0。
+LLC でも問題なし。CC-BY はクレジット表記必要 (ゲーム内クレジット欄に追記)。
+================================================================
+
+
+[★★★ 最推奨] CARD ICONS (カードのアイコン用)
+
+Game-icons.net
+  https://game-icons.net/
+  - 4,180+ 個のSVG/PNGアイコン
+  - ライセンス: CC BY 3.0 (作者クレジット必須)
+  - 一貫したシルエットスタイルで統一感バツグン
+  - フォアグラウンド色・背景色を変更してPNGダウンロード可能
+  - 使い方: サイト内検索 → 「sword」「shield」「fire」「lightning」「heart」
+           「bone」「knife」「whip」「cross」「axe」「pentagram」など
+  - 色変えるなら 紫背景 + 金foreground でVC的に揃う
+
+  カードキー→検索ワード対応:
+    bone        → bone
+    knife       → bowie-knife / kitchen-knife
+    whip        → whiplash / lasso
+    magic_wand  → magic-swirl / wizard-staff
+    cross       → spinning-sword / sword-altar
+    axe         → battered-axe
+    hellfire    → flame-spin / hot-surface
+    pentagram   → pentacle
+    bolt        → lightning-bolt
+    fire_wand   → flamer
+    heaven_sword→ winged-sword
+    knife→thousand_edge→ jeweled-chalice (or any blade)
+    pentagram   → pentagram
+    vandalier   → eagle-emblem
+
+
+[★★★] BACKGROUNDS / DUNGEON ENVIRONMENT
+
+OpenGameArt - CC0 Backgrounds
+  https://opengameart.org/content/cc0-backgrounds
+  - 公的ドメイン背景。ダンジョン廊下、城内、墓場など
+  - bg_dungeon.png / bg_battle.png 用
+
+OpenGameArt - Dark Fantasy Scenery Sprites
+  https://opengameart.org/content/cc0-artwork
+
+
+[★★] MONSTERS / ENEMIES
+
+OpenGameArt - CC0 Portraits
+  https://opengameart.org/content/cc0-portraits
+  - Vampires Hunter / Devil / Necromancer / Spider Enemy / Skeleton 等
+  - dark-fantasy 系のキャラ立ち絵
+
+OpenGameArt - The Free Monsters
+  https://opengameart.org/content/the-free-monsters
+  - Naga / Ratman / Treefolk / Troll / Divine Guardian / Lichlord
+  - Violence Demon / Goblin / Orc / Harpy / Dragon (まさに使える)
+
+LuizMelo - Monsters Creatures Fantasy
+  https://luizmelo.itch.io/monsters-creatures-fantasy
+  - 12種のファンタジーモンスター (CC0、ピクセルアートだがハイレゾ)
+  - 横向きキャラクター、アニメスプライト付き
+
+
+[★★] TILES (床/壁)
+
+Kenney - Roguelike/RPG/Tiles
+  https://kenney.nl/assets
+  - 30,000+アセット、全てCC0、クレジット不要
+  - ピクセルアートが主だが「Hand Painted」「Hand Drawn」もある
+  - "RPG Tiny Hero Duo" "Tiny Dungeon" "Pixel Platformer" など
+  - 検索: kenney.nl/assets で "dungeon" "rpg"
+
+
+[★★] CC0 一括 (とりあえずブラウズしたい)
+
+itch.io - CC0 Fantasy
+  https://itch.io/game-assets/assets-cc0/tag-fantasy
+  - 全部CC0でフィルタ済み
+  - 多数のクリエイターが提供
+
+itch.io - CC0 Monsters
+  https://itch.io/game-assets/assets-cc0/tag-monsters
+
+itch.io - Dark Fantasy (free)
+  https://itch.io/game-assets/free/tag-dark-fantasy
+
+
+[★] UI素材
+
+Kenney UI Pack
+  https://kenney.nl/assets/ui-pack-rpg-expansion
+  - カードフレーム、ボタン、HPバー素材 (CC0)
+
+
+================================================================
+オススメ流れ
+================================================================
+
+A. カードアイコンを全部Game-icons.netで統一する (一番効果大)
+   → 30分くらいで全カード分集まる
+   → クレジット: ゲーム内に "Icons by game-icons.net (CC BY 3.0)" を1行
+
+B. モンスターはOpenGameArt The Free Monsters から選んで切り出し
+   → 11種ある、足りない分はGPT image生成で補完
+
+C. 背景はOpenGameArt CC0 Backgrounds から雰囲気合うやつ2枚 (ダンジョン/戦闘)
+
+D. 床/壁タイルはKenney から (CC0でクレジット不要、楽)
+
+
+================================================================
+クレジット表記サンプル (ゲームに追加するなら)
+================================================================
+
+Credits:
+  Icons: game-icons.net (CC BY 3.0)
+  Monsters: OpenGameArt.org contributors (CC0)
+  Tiles: Kenney.nl (CC0)
+  Backgrounds: OpenGameArt.org (CC0)
+
+
+================================================================
+ファイル名規約 (gameに認識させる)
+================================================================
+ダウンロードしたPNGは下記の名前で D:\雑インストール\vampire-crawlers-proto\assets\ に置く。
+無いファイルは絵文字フォールバックで動く (壊れない)。
+
+  player.png
+  shovel.png  chest.png
+  floor.png  wall.png
+  bg_dungeon.png  bg_battle.png
+  enemy_<キー>.png   (例: enemy_bat.png, enemy_hag.png, enemy_swordian.png)
+  enemy_boss_<キー>.png (例: enemy_boss_giantmummy.png)
+  card_<キー>.png    (例: card_whip.png, card_cross.png, card_hellfire.png)
+
+現在のENEMIES/CARDSのキー一覧は game.js 冒頭を参照。
